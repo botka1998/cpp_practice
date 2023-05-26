@@ -1,2 +1,2 @@
 all:
-	g++ -o main main.cpp cat.cpp -I.
+	g++ -o main main.cpp cat.cpp parser/scanner.cpp -I.
