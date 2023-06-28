@@ -9,7 +9,8 @@ using std::endl;
 //     s = 1 / (1 + np.exp(-z))
 
 //     return s
-gmtl::Matrix<float, 10, 10> sigmoid(gmtl::Matrix<float, 10, 10> z)
+template <typename T, unsigned int Rows, unsigned int Cols>
+gmtl::Matrix<T, Rows, Cols> sigmoid(gmtl::Matrix<T, Rows, Cols> &z)
 {
     for (int row = 0; row < z.Rows; row++)
     {
@@ -27,7 +28,7 @@ int main()
 
     gmtl::mult<float, 10, 10>(my_matrix, 0.1);
 
-    my_matrix = sigmoid(my_matrix);
+    sigmoid(my_matrix);
     cout << my_matrix;
     return 1;
 }
